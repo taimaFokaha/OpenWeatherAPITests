@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "coord": {
+      "type": "object",
+      "properties": {
+        "lon": { "type": "number" },
+        "lat": { "type": "number" }
+      },
+      "required": ["lon", "lat"]
+    },
+    "weather": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "main": { "type": "string" },
+          "description": { "type": "string" },
+          "icon": { "type": "string" }
+        },
+        "required": ["id", "main", "description", "icon"]
+      }
+    },
+    "main": {
+      "type": "object",
+      "properties": {
+        "temp": { "type": "number" },
+        "pressure": { "type": "integer" },
+        "humidity": { "type": "integer" }
+      },
+      "required": ["temp", "pressure", "humidity"]
+    },
+    "name": { "type": "string" },
+    "cod": { "type": "integer" }
+  },
+  "required": ["coord", "weather", "main", "name", "cod"]
+}
